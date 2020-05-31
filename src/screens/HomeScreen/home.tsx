@@ -1,4 +1,5 @@
 import React from 'react';
+import './home.scss'
 
 interface Props { }
 
@@ -23,7 +24,7 @@ class HomeScreen extends React.Component<Props, State> {
         const { message } = this.state;
         return (
             <div>
-                <h3>{message}</h3>
+                <h3 className="color-red">{message}</h3>
             </div>
         );
     }
