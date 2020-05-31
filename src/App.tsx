@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Nav, Navbar } from 'react-bootstrap';
+import { Switch, Route, BrowserRouter as Router, } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen/home';
+import MainScreen from './screens/MainScreen/main';
+// import logo from './logo.svg';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand>Pages</Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/main">Main</Nav.Link>
+        </Nav>
+      </Navbar>
+
+      <div className="App">
+        <Switch>
+          <Route exact path='/' component={HomeScreen} />
+          <Route exact path='/main' component={MainScreen} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
