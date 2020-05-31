@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 import { Switch, Route, BrowserRouter as Router, } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen/home';
 import MainScreen from './screens/MainScreen/main';
@@ -11,13 +11,10 @@ import MainScreen from './screens/MainScreen/main';
 function App() {
   return (
     <Router>
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand>Pages</Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/main">Main</Nav.Link>
-        </Nav>
-      </Navbar>
+      <ul>
+        <li><Nav.Link href="/">Home</Nav.Link></li>
+        <li><Nav.Link href="/main">Main</Nav.Link></li>
+      </ul>
 
       <div className="App">
         <Switch>
